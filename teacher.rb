@@ -1,12 +1,8 @@
-require './person'
+require_relative('./person')
 
-##
-# A class representing a teacher
-#
-# The teacher inherits from the Person class
 class Teacher < Person
-  def initialize(specialization)
-    super()
+  def initialize(*args, specialization, **kwargs)
+    super(*args, **kwargs)
     @specialization = specialization
   end
 

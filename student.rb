@@ -1,16 +1,14 @@
-require './person'
+require_relative('./person')
 
-##
-# A class representing a student
-#
-# The student inherits from the Person class
 class Student < Person
-  def initialize(classroom)
-    super()
+  attr_accessor :classroom
+
+  def initialize(*args, classroom, **kwargs)
+    super(*args, **kwargs)
     @classroom = classroom
   end
 
   def play_hooky
-    '¯\(ツ)/¯'
+    '¯(ツ)/¯'
   end
 end
