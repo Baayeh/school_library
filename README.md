@@ -1,10 +1,4 @@
 
-<div align="center">
-
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -27,12 +21,10 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [School Library] <a name="about-project"></a>
-<p>School Library is a ruby based tool  used to record books stored in a library and who borrows them. The app will add new students or teachers, add new books, and save records of who borrowed a given book and when.</p>
+<p>School Library is a ruby based tool  used to record books stored in a library and who borrows them. The app allows users to add new students or teachers, new books, and save records of who borrowed a given book and the date it was borrowed.</p>
 
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> MORSE CODE was built in Ruby
 
 <details>
   <summary>Language</summary>
