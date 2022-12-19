@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+##
+# A class representing a person
+#
+# @attr_reader [Integer] id is the unique id assigned to each person instance
+# @attr_accessor [String] name is the name of each person instance
+# @attr_accessor [Interger] name is the age of each person instance
 class Person
   attr_reader :id
   attr_accessor :name, :age

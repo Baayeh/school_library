@@ -2,6 +2,10 @@
 
 require './person'
 
+##
+# A class representing a student
+#
+# The student inherits from the Person class
 class Student < Person
   def initialize(classroom)
     super()
