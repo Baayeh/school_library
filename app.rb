@@ -19,8 +19,8 @@ class App
 
   # App Menu
   def menu
+    puts "Welcome to School Library App!"
     begin
-      puts "Welcome to School Library App!"
       puts ''
       puts 'Please choose an option by entering a number:'
       puts '1 - List all books'
@@ -63,6 +63,16 @@ class App
         puts 'Create a book'
         puts '-' * 13
         create_book
+        puts ''
+      when 5
+        puts 'Rent a book'
+        puts '-' * 11
+        rent_book
+        puts ''
+      when 6
+        puts 'List of Rentals'
+        puts '-' * 15
+        list_rentals
         puts ''
     end
   end
@@ -123,6 +133,54 @@ class App
     puts 'Teacher created successfullly'
   end
 
-  
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    book = Book.new(title, author)
+    @books.push(book)
+    puts 'Book created successfullly'
+  end
+
+  def rent_book
+    if @books.empty?
+      puts 'No books available to rent out'
+    elsif @people.empty?
+      puts 'No person in database'
+    else
+      puts 'Select a book from the following list by number:'
+      @books.each_with_index do |book, i|
+        puts "#{i}) Title: #{book.title}, Author: #{book.author}"
+      end
+      puts ''
+      book_index = gets.chomp.to_i
+      book = @books[book_index]
+      puts ''
+      puts 'Select a person from the following list by number (not id):'
+      @people.each_with_index do |person, i|
+        puts "#{i} [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+      puts ''
+      person_index = gets.chomp.to_i
+      person = @people[person_index]
+      puts ''
+      print 'Date (YYYY/MM/DD): '
+      date = gets.chomp
+      new_rental = Rental.new(date, book, person)
+      @rentals.push(new_rental)
+      puts 'Rental created successfully'
+    end
+  end
+
+  def list_rentals
+    puts 'Select ID of any person (Please type the number of the ID)'
+    print 'Person id: '
+    id = gets.chomp.to_i
+    puts 'Rentals:'
+    @rentals.each do |rental|
+      puts rental.person.name
+    end
+  end
 
 end
