@@ -175,11 +175,15 @@ class App
 
   def list_rentals
     puts 'Select ID of any person (Please type the number of the ID)'
-    print 'Person id: '
+    print 'ID of the person: '
     id = gets.chomp.to_i
     puts 'Rentals:'
     @rentals.each do |rental|
-      puts rental.person.name
+      if id == rental.person.id
+        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
+      else
+        puts 'ID does not exist'
+      end
     end
   end
 
