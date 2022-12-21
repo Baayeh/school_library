@@ -1,3 +1,8 @@
+require_relative 'book'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'rental'
+
 class App
 
   attr_accessor :books, :people, :rentals
@@ -12,7 +17,7 @@ class App
     puts menu
   end
 
-  # List App Menu
+  # App Menu
   def menu
     begin
       puts "Welcome to School Library App!"
@@ -49,6 +54,16 @@ class App
         puts '-' * 14
         list_people
         puts ''
+      when 3
+        puts 'Create a person'
+        puts '-' * 16
+        create_person
+        puts ''
+      when 4
+        puts 'Create a book'
+        puts '-' * 13
+        create_book
+        puts ''
     end
   end
 
@@ -67,9 +82,47 @@ class App
       puts 'No person available'
     else
       @people.each do |person|
-        puts "Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
     end
   end
+
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)?: '
+    user_input = gets.chomp.to_i
+    case user_input
+      when 1
+        create_student
+      when 2
+        create_teacher
+      else puts 'Please select 1 or 2'
+    end
+  end
+
+  def create_student
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    print 'Does student have parent permission? [Y/N]: '
+    permission = gets.chomp
+    new_student = Student.new(age, permission, name)
+    @people.push(new_student)
+    puts 'Student created successfully'
+  end
+
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    teacher = Teacher.new(age, specialization, name)
+    @people.push(teacher)
+    puts 'Teacher created successfullly'
+  end
+
+  
 
 end
