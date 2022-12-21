@@ -44,14 +44,31 @@ class App
         puts '-' * 13
         list_books
         puts ''
-      
+      when 2
+        puts 'List of people'
+        puts '-' * 14
+        list_people
+        puts ''
     end
   end
 
   def list_books
-    puts 'No books available' if @books.empty?
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author}"
+    if @books.empty?
+      puts 'No books available'
+    else
+      @books.each do |book|
+        puts "Title: #{book.title}, Author: #{book.author}"
+      end
+    end
+  end
+
+  def list_people
+    if @people.empty?
+      puts 'No person available'
+    else
+      @people.each do |person|
+        puts "Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
     end
   end
 
