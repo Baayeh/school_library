@@ -4,7 +4,6 @@ require_relative 'teacher'
 require_relative 'rental'
 
 class App
-
   attr_accessor :books, :people, :rentals
 
   def initialize
@@ -19,8 +18,8 @@ class App
 
   # App Menu
   def menu
-    puts "Welcome to School Library App!"
-    begin
+    puts 'Welcome to School Library App!'
+    loop do
       puts ''
       puts 'Please choose an option by entering a number:'
       puts '1 - List all books'
@@ -39,41 +38,42 @@ class App
       when 7 then puts 'Thank you for using the app!'
       else puts 'Please enter valid option'
       end
-    end while user_input != 7
+      break unless user_input != 7
+    end
   end
 
   def run_option(user_input)
     case user_input
-      when 1
-        puts 'List of books'
-        puts '-' * 13
-        list_books
-        puts ''
-      when 2
-        puts 'List of people'
-        puts '-' * 14
-        list_people
-        puts ''
-      when 3
-        puts 'Create a person'
-        puts '-' * 16
-        create_person
-        puts ''
-      when 4
-        puts 'Create a book'
-        puts '-' * 13
-        create_book
-        puts ''
-      when 5
-        puts 'Rent a book'
-        puts '-' * 11
-        rent_book
-        puts ''
-      when 6
-        puts 'List of Rentals'
-        puts '-' * 15
-        list_rentals
-        puts ''
+    when 1
+      puts 'List of books'
+      puts '-' * 13
+      list_books
+      puts ''
+    when 2
+      puts 'List of people'
+      puts '-' * 14
+      list_people
+      puts ''
+    when 3
+      puts 'Create a person'
+      puts '-' * 16
+      create_person
+      puts ''
+    when 4
+      puts 'Create a book'
+      puts '-' * 13
+      create_book
+      puts ''
+    when 5
+      puts 'Rent a book'
+      puts '-' * 11
+      rent_book
+      puts ''
+    when 6
+      puts 'List of Rentals'
+      puts '-' * 15
+      list_rentals
+      puts ''
     end
   end
 
@@ -101,11 +101,11 @@ class App
     print 'Do you want to create a student (1) or a teacher (2)?: '
     user_input = gets.chomp.to_i
     case user_input
-      when 1
-        create_student
-      when 2
-        create_teacher
-      else puts 'Please select 1 or 2'
+    when 1
+      create_student
+    when 2
+      create_teacher
+    else puts 'Please select 1 or 2'
     end
   end
 
@@ -186,5 +186,4 @@ class App
       end
     end
   end
-
 end

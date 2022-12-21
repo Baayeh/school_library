@@ -6,4 +6,4 @@ def main
   app.run
 end
 
-main()
+main
