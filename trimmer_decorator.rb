@@ -1,4 +1,4 @@
-require './base_decorator'
+require_relative 'base_decorator'
 
 class TrimmerDecorator < Decorator
   def correct_name
