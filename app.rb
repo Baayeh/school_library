@@ -125,7 +125,7 @@ class App
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
-    name = gets.chomp
+    name = 
     print 'Specialization: '
     specialization = gets.chomp
     teacher = Teacher.new(age, specialization, name)
@@ -137,7 +137,7 @@ class App
     print 'Title: '
     title = gets.chomp
     print 'Author: '
-    author = gets.chomp
+    authors = gets.chomp
     book = Book.new(title, author)
     @books.push(book)
     puts 'Book created successfullly'
