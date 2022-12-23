@@ -137,7 +137,7 @@ class App
     print 'Title: '
     title = gets.chomp
     print 'Author: '
-    authors = gets.chomp
+    author = gets.chomp
     book = Book.new(title, author)
     @books.push(book)
     puts 'Book created successfullly'
