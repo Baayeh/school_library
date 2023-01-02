@@ -33,6 +33,26 @@
   </ul>
 </details>
 
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+> This library app has three objects.
+
+- **[Person]**
+- **[Student]**
+- **[Teacher]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+No available yet
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -75,6 +95,16 @@ Run this from the root folder at the command prompt.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Features to add to the project.
+
+- [ ] **[SET UP ASSOCIATIONS]**
+- [ ] **[ADD BASIC UI]**
+- [ ] **[REFACTOR CODE]**
+
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -98,6 +128,20 @@ If you like this project create an issue with your comments.
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank Microverse
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FAQ (optional) -->
+
+## ❓ FAQ <a name="faq"></a>
+
+- **Do I have to install all the dependencies to successfully launch this app?**
+
+  - Yes
+
+- **Must I have a web browser to be able to view this ?**
+
+  - No
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
