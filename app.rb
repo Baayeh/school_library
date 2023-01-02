@@ -1,4 +1,7 @@
-require_relative 'menu_option'
+require_relative 'book'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'rental'
 
 class App
   attr_accessor :books, :people, :rentals
@@ -7,11 +10,10 @@ class App
     @books = []
     @people = []
     @rentals = []
-    @menu_options = MenuOptions.new
   end
 
   def run
-    puts @menu_options.menu
+    puts menu
   end
 
   def list_books
