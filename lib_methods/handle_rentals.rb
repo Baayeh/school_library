@@ -55,11 +55,15 @@ module HandleRentals
     if File.exist?('rentals.json')
       rentals = File.read('rentals.json')
       rental_array = JSON.parse(rentals)
-      rental_array.each do |rental|
-        puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
+      rental_array << new_rental
+      data_json = rental_array.to_json
+      File.open('rental.json', 'w') do |file|
+        file.puts data_json
       end
     else
-      puts 'No books available'
+      File.open('rental.json', 'w') do |file|
+        file.puts @rentals.to_json
+      end
     end
   end
 end

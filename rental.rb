@@ -6,8 +6,8 @@ class Rental
     @book = book
     @person = person
 
-    person.rentals << self
-    book.rentals << self
+    # person.rentals << self.to_json
+    # book.rentals << self.to_json
   end
 
   # Serialization
