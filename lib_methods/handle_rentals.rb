@@ -60,8 +60,8 @@ module HandleRentals
   # Reading Rentals from rental.json file
   def read_rental
     if File.exist?('rental.json')
-      rental = File.read('rental.json')
-      rental_array = JSON.parse(rental)
+      rentals = File.read('rental.json')
+      rental_array = JSON.parse(rentals)
       rental_array.each do |rental|
         puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
       end

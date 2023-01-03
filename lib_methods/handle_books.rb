@@ -20,8 +20,8 @@ module HandleBook
   # Saving books
   def save_book(book)
     if File.exist?('./book.json')
-      file = File.read('./book.json')
-      data = JSON.parse(file)
+      files = File.read('./book.json')
+      data = JSON.parse(files)
       data << book
       data_json = data.to_json
       File.open('./book.json', 'w') do |file|
