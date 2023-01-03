@@ -46,16 +46,16 @@ module HandlePeople
   end
 
   def save_data(person)
-    if File.exist?('./people.json')
-      contents = File.read('./people.json')
+    if File.exist?('people.json')
+      contents = File.read('people.json')
       data = JSON.parse(contents)
       data << person
       json_data = data.to_json
-      File.open('./people.json', 'w') do |file|
+      File.open('people.json', 'w') do |file|
         file.puts(json_data)
       end
     else
-      File.open('./people.json', 'w') do |file|
+      File.open('people.json', 'w') do |file|
         data = @people.to_json
         file.puts(data)
       end
