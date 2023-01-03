@@ -1,8 +1,12 @@
-require_relative 'book'
-require_relative 'lib_methods'
+require './lib_methods/handle_books'
+require './lib_methods/handle_people'
+require './lib_methods/handle_rentals'
 
 class App
-  include Actions
+  include HandleBook
+  include HandlePeople
+  include HandleRentals
+
   attr_accessor :books, :people, :rentals
 
   def initialize
@@ -26,7 +30,7 @@ class App
     when 3
       puts 'Create a person'
       puts '-' * 16
-      create_person
+      person_selection
       puts ''
     when 4
       puts 'Create a book'
