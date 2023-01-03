@@ -9,4 +9,9 @@ class Rental
     person.rentals << self
     book.rentals << self
   end
+
+  # Serialization
+  def to_json(options = {})
+    { date: @date, book: @book, person: @person }.to_json(options)
+  end
 end
