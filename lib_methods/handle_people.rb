@@ -52,7 +52,7 @@ module HandlePeople
   end
 
   def save_data(person)
-    if (File.exists?('./people.json'))
+    if File.exist?('./people.json')
       contents = File.read('./people.json')
       data = JSON.parse(contents)
       data << person
