@@ -38,17 +38,7 @@ module HandleRentals
   end
 
   def list_rentals
-    puts 'Select ID of any person (Please type the number of the ID)'
-    print 'ID of the person: '
-    id = gets.chomp.to_i
-    puts 'Rentals:'
-    @rentals.each do |rental|
-      if id == rental.person.id
-        puts "Date: #{rental.date}, Book: #{rental.book.title} by #{rental.book.author}"
-      else
-        puts 'ID does not exist'
-      end
-    end
+    read_rental
   end
 
   def save_rentals(new_rental)
@@ -64,6 +54,19 @@ module HandleRentals
       File.open('rental.json', 'w') do |file|
         file.puts @rentals.to_json
       end
+    end
+  end
+
+  # Reading Rentals from rental.json file
+  def read_rental
+    if File.exist?('rental.json')
+      rental = File.read('rental.json')
+      rental_array = JSON.parse(rental)
+      rental_array.each do |rental|
+        puts "Date: #{rental['date']}, Book: #{rental['book']['title']} by #{rental['book']['author']}"
+      end
+    else
+      puts 'No rental in database'
     end
   end
 end
