@@ -4,13 +4,7 @@ require 'json'
 
 module HandlePeople
   def list_people
-    if @people.empty?
-      puts 'No person available'
-    else
-      @people.each do |person|
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-      end
-    end
+    read_people
   end
 
   def person_selection
@@ -65,6 +59,19 @@ module HandlePeople
         data = @people.to_json
         file.puts(data)
       end
+    end
+  end
+
+  # Reading file
+  def read_people
+    if File.exist?('people.json')
+      people = File.read('people.json')
+      people_array = JSON.parse(people)
+      people_array.each do |person|
+        puts "[#{person['type']}] Name: #{person['name']}, ID: #{person['id']}, Age: #{person['age']}"
+      end
+    else
+      puts 'No person in database'
     end
   end
 end
