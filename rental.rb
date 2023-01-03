@@ -6,7 +6,12 @@ class Rental
     @book = book
     @person = person
 
-    person.rentals << self
-    book.rentals << self
+    # person.rentals << self.to_json
+    # book.rentals << self.to_json
+  end
+
+  # Serialization
+  def to_json(options = {})
+    { date: @date, book: @book, person: @person }.to_json(options)
   end
 end

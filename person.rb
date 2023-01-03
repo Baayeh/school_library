@@ -7,6 +7,7 @@ class Person < Nameable
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
     @id = Random.rand(1..1000)
+    @type = self.class
     @age = age
     @name = name
     @parent_permission = parent_permission
@@ -29,5 +30,10 @@ class Person < Nameable
 
   def add_rental(date, book)
     Rental.new(date, self, book)
+  end
+
+  # Serialization
+  def to_json(options = {})
+    { type: @type, id: @id, name: @name, age: @age }.to_json(options)
   end
 end
