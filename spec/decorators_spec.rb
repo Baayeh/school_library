@@ -7,3 +7,11 @@ describe CapitalizeDecorator do
     expect(decorator.correct_name).to eql 'Okechukwu'
   end
 end
+
+describe TrimmerDecorator do
+  it 'should trim some characters off' do
+    person = Person.new(25, 'chukwuemekalum')
+    decorator = TrimmerDecorator.new(person)
+    expect(decorator.correct_name).to eql 'chukwuemek'
+  end
+end
