@@ -1,8 +1,6 @@
-require 'rspec'
+require 'spec_helper'
 
 # Test for Person class
-require_relative '../person'
-
 describe Person do
   describe '#initialize' do
     it 'Creates an instance of a person with name and age' do
@@ -22,6 +20,13 @@ describe Person do
     it 'returns the age of the person' do
       person = Person.new(30, 'Okechukwu')
       expect(person.age).to be_kind_of Numeric
+    end
+  end
+
+  describe '#can_use_services?' do
+    it 'should return true' do
+      person = Person.new(30, 'Okechukwu')
+      expect(person.can_use_services?).to be true
     end
   end
 end
