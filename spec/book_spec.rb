@@ -1,7 +1,4 @@
-require 'rspec'
-
-# Book class testing
-require_relative '../book'
+require 'spec_helper'
 
 describe Book do
   describe '#initialize' do

@@ -1,8 +1,6 @@
-require 'rspec'
+require 'spec_helper'
 
 # Unit test for Student class
-require_relative '../student'
-
 describe Student do
   describe '#initialize' do
     it 'Creates an instance of Student with a age, classroom, name and parent_permission' do
