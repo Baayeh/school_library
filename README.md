@@ -13,6 +13,7 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -91,6 +92,12 @@ Run this from the root folder at the command prompt.
 - GitHub: [Baayeh](https://github.com/Baayeh)
 - Twitter: [@Cest_Baayeh](https://twitter.com/Cest_Baayeh)
 - LinkedIn: [kabaayeh](https://linkedin.com/in/kabaayeh)
+
+👤 **Okechukwu**
+
+- GitHub: [@githubhandle](https://github.com/Okechukwu-muokwugwo)
+- Twitter: [@twitterhandle](https://twitter.com/excel4eva)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/okeimuokwugwo)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
